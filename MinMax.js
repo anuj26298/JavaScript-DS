@@ -7,16 +7,22 @@ for(let i=0;i<10;i++){
     }while(number < 100);
     array[i] = number;
 }
-
-console.log(array);
+array.sort();
 minMaxWithoutSorting(array);
-function minMaxWithoutSorting(array){
-    let tempArray = array;
-    let firstMax = Math.max.apply(Math,tempArray);
-    tempArray.splice(tempArray.indexOf(firstMax),1);
-    console.log("Second Max: " + Math.max.apply(Math,tempArray));
+function minMaxWithoutSorting(arr){
+    arr.sort();
+    console.log(arr);
+    let firstMax = Math.max.apply(null,arr);
+    tempArray.splice(arr.indexOf(firstMax),1);
+    console.log("Second Max: " + Math.max.apply(null,arr));
 
-    let firstMin = Math.min.apply(Math,tempArray);
-    tempArray.splice(tempArray.indexOf(firstMin),1);
-    console.log("Second Min: " + Math.min.apply(Math,tempArray));
+    let firstMin = Math.min.apply(null,arr);
+    tempArray.splice(arr.indexOf(firstMin),1);
+    console.log("Second Min: " + Math.min.apply(null,arr));
 }
+
+// function minMaxWithSorting(array){
+//     array.sort();
+//     console.log("Second Max: " + array.indexOf(array.length - 1));
+//     console.log("Second Min: " + array.indexOf(1));
+// }
